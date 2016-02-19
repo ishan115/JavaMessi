@@ -1,0 +1,30 @@
+import java.util.*;
+
+class PalindromeTest2 {
+   public static void main(String [] args) {
+   All s = new All();
+   s.everything();
+   
+   }
+}
+
+class All {
+   int a, b = 0, c, n;
+   public void everything() {
+   Scanner s = new Scanner(System.in);
+   System.out.println("Enter the number");
+   a = s.nextInt();
+   n = a;
+   while (a > 0) {
+      c = a % 10;
+      b = (b*10) + c;
+      a = a / 10;
+      }  
+   if (n == b) {
+      System.out.println("Palindrome");
+   } else {
+      System.out.println("Not a Palindrome");
+   }
+}
+}         
+         
