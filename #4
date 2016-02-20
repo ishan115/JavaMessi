@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Factorial {
+   public static void main(String [] args) {
+   Calculation s = new Calculation();
+   s.number();
+   }
+}
+
+class Calculation {
+   int n, c;
+   int fact = 1;
+   public void number() {
+      Scanner s = new Scanner(System.in);
+      System.out.println("Enter a number");
+      n = s.nextInt();
+      if ( n < 0 ) {
+         System.out.println("Enter positive numbers only");
+      } else { 
+        c = 1;  
+            while (c < n) {
+               c++;
+               fact = fact * c;
+            }
+               System.out.println("The factorial of " + n + " is = " + fact);
+      }
+   }
+}
