@@ -1,0 +1,28 @@
+import java.util.*;
+
+class Length {
+   public static void main(String [] args) {
+      Search s = new Search();
+      s.subDomain();
+   }
+}
+
+class Search {
+   String name;
+      public void subDomain() { 
+      Scanner s = new Scanner(System.in);
+      System.out.println("Enter your name = "); 
+      name = s.next();
+      char[] x = name.toCharArray();
+      int len = x.length;
+      int i;
+      i = 0;
+         while (i < len) {
+            if (x[i] == 'a' || x[i] == 'e' || x[i] == 'i' || x[i] == 'o' || x[i] == 'u') {
+            x[i] = 'z';
+           }
+            i++;
+         }
+            System.out.println("The revised name is = " + x);
+   }
+}           
