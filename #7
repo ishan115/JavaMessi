@@ -1,0 +1,30 @@
+import java.util.*;
+
+class PatternIndia {
+   public static void main(String [] args) {
+   Everything s = new Everything();
+   s.accept();
+   s.draw();
+   }
+}
+
+class Everything {
+   String str;
+   public void accept() {
+      Scanner s = new Scanner(System.in);
+      System.out.println("Enter the name: ");
+      str = s.next();
+   }
+   public void draw() {
+      int i, j;
+      char [] a = str.toCharArray();
+      int len = a.length;
+      for (i = 0; i < len; i++) {
+         for (j = 0; j <= i; j++) {
+            System.out.print(a[j] + " ");
+         }
+         System.out.print("\n");
+      }
+   }
+}               
+      
