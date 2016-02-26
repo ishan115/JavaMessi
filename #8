@@ -1,0 +1,44 @@
+import java.util.*;
+
+class OrderAsc {
+   public static void main(String [] args) {
+   AscendingOrder s = new AscendingOrder();
+   s.accept();
+      System.out.println("Original numbers Entered: " );
+   s.display();
+      System.out.println();
+   s.arrange();
+      System.out.println("Ascending order: ");
+   s.display();
+   }
+}   
+   
+class AscendingOrder {
+   int [] a = new int [10];
+   public void accept() {
+      int i;
+      Scanner s = new Scanner(System.in);
+      System.out.println("Enter 10 numbers");
+      for (i = 0; i < 10; i++) {
+         a[i] = s.nextInt();
+      }
+   }
+   public void arrange() {
+      int i,j,t;
+      for (i = 0; i < 10; i++) {
+         for(j = 0; j <= (8 - i); j++) {
+            if (a[j] > a[j+1]) {
+               t = a[j];
+               a[j] = a[j + 1];
+               a[j + 1] = t;
+            }
+         }
+      }
+   } 
+   public void display() {
+      int i;
+      for (i = 0; i < 10; i++) {
+         System.out.print(a[i] + " ");
+      } 
+   }             
+}                       
