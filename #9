@@ -1,0 +1,32 @@
+package demo.constructor;
+
+class Construct {
+   private int sid;
+   private String name, phoneNo;
+   
+   public String student() {
+      name = "Rakesh";
+      return name; 
+   }
+   public int sid() {
+      sid = 101;
+      return sid;
+   }
+   public String phNo() {
+      phoneNo = "1234567890";
+      return phoneNo;
+   }   
+      
+   public void display() {
+      System.out.println("Student id: " + sid);
+      System.out.println("Name: " + name);
+      System.out.println("Phone Number: " + phoneNo);
+   }
+}
+
+public class Student {
+   public static void main(String [] args) {
+   Construct s = new Construct();
+   s.display();
+   }
+}
