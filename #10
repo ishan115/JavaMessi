@@ -1,0 +1,48 @@
+public class PolyAccount {
+   public static void main(String [] args) {
+      DecideAccount d = new DecideAccount();
+      d.decide(new CurrentAccount());
+   }
+}      
+
+abstract class Account {
+   public abstract void deposit();
+   public abstract void withdraw();
+   //public abstract void overdraft();
+}
+
+class CurrentAccount extends Account {
+   public void deposit() {
+      System.out.println("Deposit (Current): ");
+   }  
+   public void withdraw() {
+      System.out.println("Withdraw (Current): ");
+   }   
+   public void overdraft() {
+      System.out.println("Overdraft (Current): ");
+   }
+}
+
+class SavingAccount extends Account {
+   public void deposit() {
+      System.out.println("Deposit (Saving): ");
+   }  
+   public void withdraw() {
+      System.out.println("Deposit (Saving): ");
+   }
+}
+
+class DecideAccount {
+   public void decide(Account a) {
+      if (a instanceof CurrentAccount) {
+         CurrentAccount ca = CurrentAccount (a);
+         ca.deposit();
+         ca.withdraw();
+         ca.overdraft();
+      } else if (a instanceof SavingAccount) {
+         SavingAccount sa = SavingAccount (a);
+         sa.deposit();
+         sa.withdraw();
+      }
+   } 
+}        
