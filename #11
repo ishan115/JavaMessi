@@ -1,0 +1,61 @@
+package demo.Username;
+import java.util.*;
+import java.util.Map.Entry;
+
+	
+	public class User {
+		
+		public static void main(String [] args) {
+			String user, pass;
+			Scanner s = new Scanner(System.in);
+			TreeMap <String, String> p = new TreeMap<>();
+			p.put("ishan115", "123456789");
+			p.put("rakeshp", "niitisbest");
+			p.put("mohit123", "niit123");
+			
+			System.out.println("Enter your Username and Password = ");
+			System.out.println("Username: ");
+			user = s.next();
+			System.out.println("Password: ");
+			pass = s.next();
+			int success=0,msg=0;
+			Set <String> key = p.keySet();
+			for(String x:key)
+			{
+				if(x.equals(user))
+				{
+					if(pass.equals(p.get(x)))
+					{
+						//
+						success=1;
+						msg=0;
+						break;
+					}
+					else
+					{
+						//System.out.println("Invalid password");
+						success=0;
+						msg=0;
+						break;
+					}
+				}
+				else
+				{
+					success=-1;
+					msg=1;
+				}
+			}
+			if(success==1 && msg==0)
+			{
+				System.out.println("Login Successfull");
+			}
+			else if(success==0 && msg==0)
+			{
+				System.out.println("Invalid Password");
+			}
+			else if(success==-1 && msg==1)
+			{
+				System.out.println("User not registered");
+			}
+		}
+	}
